@@ -1,0 +1,7 @@
+{
+  "name": "ion-modal-in-popover",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

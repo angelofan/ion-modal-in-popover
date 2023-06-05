@@ -1,0 +1,59 @@
+<div class="ion-page" #page>
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-title>
+        Blank
+      </ion-title>
+      <ion-buttons slot="end">
+        <ion-button id="click-trigger">
+          <ion-icon slot="icon-only" name="add-circle"></ion-icon>
+        </ion-button>
+        <ion-popover trigger="click-trigger" [dismissOnSelect]="true" side="bottom">
+          <ng-template>
+            <ion-content>
+              <ion-list class="ion-no-padding">
+                <ion-item button [detail]="false" id="open-modal" lines="none">
+                  <ion-icon name="cube-outline" slot="start"></ion-icon>
+                  <ion-label>Open Modal</ion-label>
+                </ion-item>
+                <ion-modal #modal trigger="open-modal" [presentingElement]="page">
+                  <ng-template>
+                    <ion-header>
+                      <ion-toolbar>
+                        <ion-buttons slot="start">
+                          <ion-button (click)="modal.dismiss()">Done A</ion-button>
+                        </ion-buttons>
+                        <ion-title>Modal</ion-title>
+                        <ion-buttons slot="end">
+                          <ion-button (click)="dismiss()">Done B</ion-button>
+                        </ion-buttons>
+                      </ion-toolbar>
+                    </ion-header>
+                    <ion-content class="ion-padding">
+                      <ion-button (click)="modal.dismiss()">Close Modal A</ion-button>
+                      <ion-button (click)="dismiss()">Close Modal B</ion-button>
+                      <ion-button (click)="consoleLog()">Console Log</ion-button>
+                    </ion-content>
+                  </ng-template>
+                </ion-modal>
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-popover>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content [fullscreen]="true">
+    <ion-header collapse="condense">
+      <ion-toolbar>
+        <ion-title size="large">Blank</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <div id="container">
+      <strong>Ready to create an app?</strong>
+      <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    </div>
+  </ion-content>
+</div>
